@@ -6,8 +6,8 @@
 
 - perspective
 - transform
- - transform-origin
- - transform-style: preserve-3d
+ - transform-origin: http://codepen.io/impressivewebs/pen/niurC
+ - transform-style: preserve-3d:
 - 3D transform function
  - rotateX
  - rotateY
@@ -19,6 +19,8 @@
 
 ## examples
 - iphone weather like flip: http://codepen.io/zhangmeng712/pen/MYmamx
-- cube
-- cards flip like http://huaban.com/pins/303188399/  card.html
+- cube:
+- cas:
+- stack: cards.html
+
 

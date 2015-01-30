@@ -11,7 +11,7 @@
 
 ### API
 
-### zepto(jquery) & snabbt transform API
+### how to use matrix
 
 
 

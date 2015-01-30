@@ -1,0 +1,58 @@
+* {
+    margin:0;
+    padding:0;
+}
+.wrapper {
+    margin-bottom: 200px;
+    background-color: #eeeeee;
+}
+.login {
+    background-color: #1a8fb4;
+    height: 300px;
+}
+form {
+    border: 1px solid #ddd;
+    background-color: #fff;
+    position: relative;
+    max-width: 400px;
+    padding: 0;
+    top:200px;
+    min-height:200px;
+    margin: 0 auto;
+}
+
+.login-an-bg {
+    width:211px;
+    height: 108px;
+    border: 1px solid #000;
+    position: absolute;
+    top: -100px;
+    left:95px;
+    background-image: url('assets/login-bg.png');
+    background-size: 211px 108px;
+    width: 211px;
+    height: 108px;
+
+}
+.hand-left, .hand-right {
+    width: 34px;
+    height: 34px;
+    -webkit-border-radius: 40px;
+    border-radius: 40px;
+    background-color: #472d20;
+    position: absolute;
+    transform: scaleY(0.6);
+    bottom: -8px;
+}
+
+.hand-left {
+   left: 5px;
+}
+
+.hand-right {
+   right: 5px;
+}
+
+.arm-left {
+
+}

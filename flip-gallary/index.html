@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>flip-image-gallary</title>
+    <link rel="stylesheet" type="text/css" href="flip.css"/>
+</head>
+<style>
+    body {
+        background-color: #000000;
+        text-align: center;
+    }
+    .container {
+        margin: 100px auto;
+        width:960px;
+        min-height: 500px;
+    }
+
+    .pictures {
+        margin-left:330px;
+        width:310px;
+        height:420px;
+    }
+    .btn {
+        width: 100px;
+        color: #0D2633;
+        border: none;
+        margin-left: 10px;
+        background: #00B0FF;
+        display: inline-block;
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        line-height: 100%;
+        padding: 0.7em;
+        text-decoration: none;
+        font-size: 17px;
+        font-family: open sans;
+        font-weight: bold;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+</style>
+<body>
+<div class="container">
+    <div class="pictures">
+        <ul>
+            <li>
+                <img src="img/11.jpg"/>
+                <label class="none">
+                    Ghandruk, getting a good feel
+                </label>
+            </li>
+            <li>
+                <img src="img/22.jpg"/>
+                <label class="none">
+                    Happily ever after
+                </label>
+            </li>
+            <li>
+                <img src="img/33.jpg"/>
+
+                <label class="none">
+                    Hello my world
+                </label>
+            </li>
+            <li>
+                <img src="img/44.jpg"/>
+
+                <label class="none">
+                    css3 and html5 is amazing
+                </label>
+            </li>
+            <li>
+                <img src="img/55.jpg"/>
+
+                <label class="none">
+                    using js and css3 to achieve animation
+                </label>
+            </li>
+        </ul>
+        <!--<div class="fc-cap">-->
+            <!--Ghandruk, getting a good feel-->
+        <!--</div>-->
+    </div>
+    <div class="navigate">
+        <a class="btn prev">prev</a>
+        <a class="btn next">next</a>
+    </div>
+</div>
+<script src="zepto.js"></script>
+<script src="flip.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+        var fc = new lib.FlipCard('.pictures', {
+            autoPlay: 0
+        });
+        var next = document.querySelector('.next');
+        var prev = document.querySelector('.prev');
+        next.addEventListener('click', function () {
+            fc.flipNext();
+            return false;
+        }, false);
+        prev.addEventListener('click', function (e) {
+            fc.flipPrev(e);
+            return false;
+        }, false);
+    });
+
+</script>
+</body>
+</html>
