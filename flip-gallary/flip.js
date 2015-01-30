@@ -90,19 +90,25 @@
                 el.find('.fc-cap').css('opacity',0);//配合翻折时间消失
                 var cards = this.el.find('li');
                 var firstCard = cards.first();
+                var last = cards.last();
                 firstCard.addClass("flipping").css("opacity", "0");
-                firstCard.one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(e) {
-                    if (e.propertyName=='transform') {
+                firstCard.on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(e) {
+                    if (!this.animated) {
                         var save_card = firstCard.removeClass("animate active flipping").clone();
                         firstCard.remove();
                         el.append(save_card.hide());
                         that.arrangeCards();
+                        this.animated = true;
+
                     }
-                    el.find('li').on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',function(e) {
+
+                    last.on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',function(e) {
                         if (e.propertyName == 'z-index') {
+                            console.log(e.propertyName);
                             el.find('li').show();
                             el.removeClass("animating");
                         }
+
 
                     });
 
