@@ -54,7 +54,7 @@
                 if (i === 0) {
                     //设置第一个
                     var cap = $('.fc-cap');
-                    cap.html('');
+                    cap.removeClass('fadeOut').html('');
                     var label = node.find('label');
                     cap.html(label.html()).css({
                         opacity: 1
@@ -78,6 +78,14 @@
                     "opacity": new_opacity
                 });
 
+                node.find('img').css({
+                    'z-index':  new_zIndex
+                });
+
+                node.find('label').css({
+                   'z-index':  new_zIndex-1
+                });
+
             });
 
         },
@@ -87,11 +95,14 @@
             var that = this;
             if (!el.hasClass('animating')) {
                 el.addClass('animating');//外层增加class代表开始动画
-                el.find('.fc-cap').css('opacity',0);//配合翻折时间消失
+                //el.find('.fc-cap').css('opacity',0);//配合翻折时间消失
+                $(this.container).find('.fc-cap').addClass('fadeOut');
                 var cards = this.el.find('li');
                 var firstCard = cards.first();
                 var last = cards.last();
                 firstCard.addClass("flipping").css("opacity", "0");
+
+
                 firstCard.on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(e) {
                     if (!this.animated) {
                         var save_card = firstCard.removeClass("animate active flipping").clone();
@@ -113,6 +124,8 @@
                     });
 
                 });
+
+
 
             }
 

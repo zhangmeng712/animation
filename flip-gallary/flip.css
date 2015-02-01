@@ -34,13 +34,39 @@ img {
     -webkit-transform-origin: 50% 0;
     -ms-transform-origin: 50% 0;
     transform-origin: 50% 0;
+    width:300px;
+    height:200px;
 }
+
 
 .fc-card img{
     width:300px;
     height:200px;
     border-radius: 3px;
 }
+
+.fc-card label {
+    position:absolute;
+    display: block;
+    width:300px;
+    padding-top:20px;
+    color: white;
+    font-style: italic;
+    font-family: noto serif;
+    font-size: 16px;
+    background-color: #000;
+    opacity: 0.5;
+    bottom: 20px;
+    backface-visibility: hidden;
+}
+.fc-card img {
+    position:absolute;
+    top:0;
+    left:0;
+    backface-visibility: hidden;
+}
+
+
 .fc-card.animate {
     -webkit-transition: all 200ms ease-in-out;
     -moz-transition: all 200ms ease-in-out;
@@ -78,11 +104,27 @@ img {
     position: absolute;
     text-align: center;
     top:210px;
-    -webkit-transition: all 0.1s ease-in-out;
-    -moz-transition: all 0.1s;
-    -o-transition: all 0.1s;
-    transition: all 0.1s ease-in-out;
-
+    /*-webkit-transition: all 0.1s ease-in-out;*/
+    /*-moz-transition: all 0.1s;*/
+    /*-o-transition: all 0.1s;*/
+    /*transition: all 0.1s ease-in-out;*/
 }
+
+/*保持和翻转的速度消失一致 600ms*/
+.fc-cap.fadeOut {
+    -webkit-animation: fadeOut 200ms;
+}
+
+@-webkit-keyframes fadeOut {
+    0% {
+        opacity: 1
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+
 
 
